@@ -1,7 +1,7 @@
 <script>
 	import * as L from 'leaflet';
 
-	const CORS = "https://c.anoram.com/"
+	const CORS = "https://cors.anoram.com/?"
 	const URL = "http://api.open-notify.org/iss-now.json"
 	const passes = "http://api.open-notify.org/iss-pass.json?alt=20&n=5&"
 	let lat = 0,
@@ -18,7 +18,7 @@
 			marker.setLatLng([lat ? lat : '', lon ? lon : '']).update();
 			m.panTo([lat, lon]);
 		})
-		setTimeout(fetchInfo, 5000)
+		setTimeout(fetchInfo, 15000)
 	}
 
 
@@ -90,7 +90,7 @@
 <div style="height:600px;width:100%" use:mapAction />
 
 <main class="text-center">
-	<p class="latlon">Current location: {lat??'loading'}, {lon??'loading'}</p>
+	<p class="latlon">Current location: {lat??'loading'}, {lon??'loading'} (updates 15s once)</p>
 	<p>{warntext}</p>
 	<ul>
 		{#each ISSPass as item} 
