@@ -1,7 +1,7 @@
 <script>
 	import * as L from 'leaflet';
 
-	const CORS = "https://cors.anoram.com/?"
+	const CORS = "https://cors.anoram.workers.dev/?"
 	const URL = "http://api.open-notify.org/iss-now.json"
 	const passes = "http://api.open-notify.org/iss-pass.json?alt=20&n=5&"
 	let lat = 0,
