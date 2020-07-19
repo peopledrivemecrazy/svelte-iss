@@ -73,10 +73,12 @@ nav ul {
 	list-style: none;
 	display: flex;
 }
+ul{
+	padding: 0;
+}
 ul li {
 	list-style: none;
 	margin: 0 1em;
-	padding: 0;
 }
 
 @media (min-width:320px) {
