@@ -69,13 +69,14 @@ nav {
 	padding: 0 2em;
 }
 
-ul {
+nav ul {
 	list-style: none;
 	display: flex;
 }
 ul li {
-	display: inline-block;
+	list-style: none;
 	margin: 0 1em;
+	padding: 0;
 }
 
 @media (min-width:320px) {
@@ -91,7 +92,7 @@ ul li {
 	svg {
 		width: 100px;
 	}
-	ul {
+	nav ul {
 		justify-content: flex-end
 	}
 	.hidden-xs {
@@ -108,7 +109,7 @@ ul li {
 	svg {
 		width: 300px;
 	}
-	ul {
+	nav ul {
 		justify-content: space-between;
 	}
 	.hidden-xs {
@@ -136,14 +137,15 @@ footer {
 }
 
 p {
-	font-size: 2em;
+	color: #000;
+}
+.pass {
 	color: #ff3e00;
 }
-
 h3 {
 	font-size: 2em
 }
-ul {
+nav ul {
 	list-style: none;
 	display: flex;
 	justify-content: flex-end
