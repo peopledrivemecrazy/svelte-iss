@@ -15,10 +15,6 @@
 			let d = await data.json();
 			lat = d.iss_position.latitude
 			lon = d.iss_position.longitude
-			console.log({
-				lat,
-				lon
-			})
 			marker.setLatLng([lat ? lat : '', lon ? lon : '']).update();
 			m.panTo([lat, lon]);
 		})
@@ -67,12 +63,11 @@
 		if (navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showPosition);
 		} else {
-			console.log("Geolocation is not supported by this browser / Not shared")
+			console.warn("Geolocation is not supported by this browser / Not shared")
 		}
 	}
 
 	function showPosition(position) {
-		console.log(position.coords.latitude, position.coords.longitude);
 		fetchPasses(position.coords.latitude, position.coords.longitude)
 	}
 	getLocation()
