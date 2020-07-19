@@ -1,7 +1,7 @@
 <script>
 	import * as L from 'leaflet';
 
-
+	const CORS = "https://cors-anywhere.herokuapp.com/"
 	const URL = "http://api.open-notify.org/iss-now.json"
 	const passes = "http://api.open-notify.org/iss-pass.json?alt=20&n=5&"
 	let lat = 0,
@@ -11,7 +11,7 @@
 	let map;
 	let marker
 	async function fetchInfo() {
-		const res = await fetch(URL).then(async data => {
+		const res = await fetch(`${CORS}${URL}`).then(async data => {
 			let d = await data.json();
 			lat = d.iss_position.latitude
 			lon = d.iss_position.longitude
@@ -79,7 +79,7 @@
 	let ISSPass = '';
 	async function fetchPasses(lt, ln) {
 		warntext = 'loading...'
-		const res = await fetch(`https://cors-anywhere.herokuapp.com/${passes}lat=${lt}&lon=${ln}`).then(
+		const res = await fetch(`${CORS}${passes}lat=${lt}&lon=${ln}`).then(
 	async data => {
 			let d = await data.json();
 			ISSPass = await d.response;
